@@ -1,14 +1,23 @@
 import React from "react";
 import { Box, Image, Link, HStack, Text } from "@chakra-ui/react";
 
-export default function SidebarLink({
+type SidebarLinkProps = {
+  src: any;
+  activeSrc: any;
+  alt?: string;
+  linkText: string;
+  isActive: Boolean;
+  onClick: () => void;
+};
+
+const SidebarLink = ({
   src,
   activeSrc,
   alt,
   linkText,
   isActive,
   onClick,
-}) {
+}: SidebarLinkProps) => {
   const [isHover, setIsHover] = React.useState(false);
   return (
     <Link
@@ -31,7 +40,7 @@ export default function SidebarLink({
             boxSize="20px"
             objectFit="contain"
             src={isHover || isActive ? activeSrc : src}
-            // alt={alt}
+            alt={alt}
           />
           <Text
             _groupHover={{
@@ -47,4 +56,6 @@ export default function SidebarLink({
       </Box>
     </Link>
   );
-}
+};
+
+export default SidebarLink;

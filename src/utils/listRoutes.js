@@ -15,7 +15,7 @@ import MaleUserActive from "../assets/images/male_user_active.png";
 import ViewMore from "../assets/images/view_more.png";
 import ViewMoreActive from "../assets/images/view_more_active.png";
 
-export default [
+const listRoutes = [
   {
     link: "Home",
     route: "home",
@@ -65,3 +65,5 @@ export default [
     activeSrc: ViewMoreActive,
   },
 ];
+
+export default listRoutes;
